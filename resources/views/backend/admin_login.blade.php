@@ -4,10 +4,10 @@
 <head>
         <title>Matrix Admin</title><meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="{{ asset('css/backend_css/bootstrap.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/backend_css/bootstrap-responsive.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/backend_css/matrix-login.css') }}" />
-        <link href="{{ asset('fonts/backend_fonts/font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/backend/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/backend/bootstrap-responsive.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/backend/matrix-login.css') }}" />
+        <link href="{{ asset('fonts/backend/font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
     </head>
@@ -61,10 +61,10 @@
                 </div>
             </form>
         </div>
-        
-        <script src="{{ asset('js/backend_js/jquery.min.js') }}"></script>  
-        <script src="{{ asset('js/backend_js/matrix.login.js') }}"></script> 
-        <script src="{{ asset('js/backend_js/bootstrap.min.js') }}"></script>
+
+        <script src="{{ asset('js/backend/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/backend/matrix.login.js') }}"></script>
+        <script src="{{ asset('js/backend/bootstrap.min.js') }}"></script>
     </body>
 
 </html>
