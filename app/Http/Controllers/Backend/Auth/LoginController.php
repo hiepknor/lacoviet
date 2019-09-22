@@ -23,7 +23,7 @@ class LoginController extends Controller
                 return redirect(route('login'))->with('flash_message_error','Invalid email or password!');
             }
         }
-        return view('admin.admin_login');
+        return view('backend.admin_login');
     }
 
     public function chkPassword(Request $request){

@@ -24,7 +24,7 @@ class CategoryController extends Controller
 
         $levels = Category::where(['parent_id'=>0])->get();
 
-    	return view('admin.categories.add_category')->with(compact('levels'));
+    	return view('backend.categories.add_category')->with(compact('levels'));
     }
 
     public function editCategory(Request $request, $id = null){
@@ -36,7 +36,7 @@ class CategoryController extends Controller
         }
         $categoryDetails = Category::where(['id'=>$id])->first();
         $levels = Category::where(['parent_id'=>0])->get();
-        return view('admin.categories.edit_category')->with(compact('categoryDetails','levels'));
+        return view('backend.categories.edit_category')->with(compact('categoryDetails','levels'));
     }
 
     public function deleteCategory(Request $request, $id = null){
@@ -51,6 +51,6 @@ class CategoryController extends Controller
     	$categories = Category::get();
     	$categories = json_decode(json_encode($categories));
     	/*echo "<pre>"; print_r($categories); die;*/
-    	return view('admin.categories.view_categories')->with(compact('categories'));
+    	return view('backend.categories.view_categories')->with(compact('categories'));
     }
 }

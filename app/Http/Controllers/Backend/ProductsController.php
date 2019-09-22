@@ -64,7 +64,7 @@ class ProductsController extends Controller
     			$categories_dropdown .= "<option value = '".$sub_cat->id."'>&nbsp;--&nbsp;".$sub_cat->name."</option>";
     		}
     	}
-    	return view('admin.products.add_product')->with(compact('categories_dropdown'));
+    	return view('backend.products.add_product')->with(compact('categories_dropdown'));
     }
 
     public function viewProducts(){
@@ -75,6 +75,6 @@ class ProductsController extends Controller
             $products[$key]->category_name = $category_name->name;
         }
         //echo "<pre>"; print_r($products); die;
-        return view('admin.products.view_products')->with(compact('products'));
+        return view('backend.products.view_products')->with(compact('products'));
     }
 }
