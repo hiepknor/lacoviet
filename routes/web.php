@@ -31,6 +31,38 @@ Route::group(['middleware' => ['auth']],function(){
 	Route::get('/admin/view-products','Backend\ProductsController@viewProducts');
 });
 
-Route::get('/', 'Frontend\HomeController@index')->name('home');
 
+// Frontend
+Route::get('/', ['as' => 'trang-chu', 'uses' => 'Frontend\HomeController@index'])->name('home');
 
+Route::get('trang-chu', ['as' => 'trang-chu', 'uses' => 'Frontend\HomeController@index']);
+
+Route::get('gioi-thieu', ['as' => 'gioi-thieu', 'uses' => 'Frontend\AboutController@index']);
+
+Route::get('san-pham', ['as' => 'san-pham', 'uses' => 'Frontend\ProductController@index']);
+
+Route::get('tin-tuc', ['as' => 'tin-tuc', 'uses' => 'Frontend\NewsController@index']);
+
+Route::get('hoat-dong', ['as' => 'hoat-dong', 'uses' => 'Frontend\EventController@index']);
+
+Route::get('tuyen-si-dai-ly', ['as' => 'tuyen-si-dai-ly', 'uses' => 'Frontend\AgencyController@index']);
+
+Route::get('lien-he', ['as' => 'lien-he', 'uses' => 'Frontend\ContactController@index']);
+
+Route::get('san-pham/{categorySlug}', ['as' => 'danh-muc', 'uses' => 'Frontend\CategoryController@index']);
+
+Route::get('san-pham/{categorySlug}/{productSlug}', ['as' => 'chi-tiet-san-pham', 'uses' => 'Frontend\ProductController@detail']);
+
+Route::get('gio-hang', ['as' => 'gio-hang', 'uses' => 'Frontend\CartController@index']);
+
+Route::get('them-gio-hang/{id}', ['as' => 'them-gio-hang', 'uses' => 'Frontend\CartController@addToCart']);
+
+Route::patch('cap-nhat-gio-hang', ['as' => 'cap-nhat-gio-hang', 'uses' => 'Frontend\CartController@updateCart']);
+
+Route::delete('xoa-gio-hang', ['as' => 'xoa-gio-hang', 'uses' => 'Frontend\CartController@removeCart']);
+
+Route::get('thanh-toan', ['as' => 'thanh-toan', 'uses' => 'Frontend\CheckoutController@index']);
+
+Route::post('luu-don-hang', ['as' => 'luu-don-hang', 'uses' => 'Frontend\CheckoutController@saveOrder']);
+
+Route::get('saveOrder', ['as' => 'dat-hang-thanh-cong', 'uses' => 'Frontend\CheckoutController@saveOrder']);
