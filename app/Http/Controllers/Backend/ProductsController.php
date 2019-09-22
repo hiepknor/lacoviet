@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use Auth;
-use Session;
-use Image;
+use Intervention\Image\Facades\Image;
 use App\Category;
 use App\Product;
 
