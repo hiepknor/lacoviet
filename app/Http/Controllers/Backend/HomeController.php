@@ -13,4 +13,8 @@ class HomeController extends Controller
     public function settings(){
         return view('backend.settings');
     }
+
+    public function charts() {
+        return view('backend.charts');
+    }
 }
