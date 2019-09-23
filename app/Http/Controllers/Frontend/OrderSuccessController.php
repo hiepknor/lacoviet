@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
+use App\Models\Category;
 
 class OrderSuccessController extends Controller
 {
@@ -15,7 +15,7 @@ class OrderSuccessController extends Controller
     }
 
     public function index() {
-        return view('pages.order-success', [
+        return view('frontend.order-success', [
             'all_categories' => $this->category->get(),
         ]);
     }

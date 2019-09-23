@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
+use App\Models\Category;
 
 class ContactController extends Controller
 {
@@ -15,7 +15,7 @@ class ContactController extends Controller
     }
 
     public function index() {
-        return view('pages.contact', [
+        return view('frontend.contact', [
             'all_categories' => $this->category->get(),
         ]);
     }

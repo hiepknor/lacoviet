@@ -5,12 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
-use Mckenziearts\Shopper\Plugins\Orders\Models\Order;
-use Mckenziearts\Shopper\Plugins\Orders\Models\PaymentMethod;
-use Mckenziearts\Shopper\Plugins\Users\Models\User;
-use Mckenziearts\Shopper\Plugins\Users\Models\Address;
-use Mckenziearts\Shopper\Plugins\Orders\Models\ShippingType;
+use App\Models\Category;
 
 class CheckoutController extends Controller
 {
@@ -31,7 +26,7 @@ class CheckoutController extends Controller
     }
 
     public function index() {
-        return view('pages.checkout', [
+        return view('frontend.checkout', [
             'all_categories' => $this->category->get(),
             'paymentMethod'  => $this->paymentMethod->get(),
             'shippingType'   => $this->shippingType->get(),

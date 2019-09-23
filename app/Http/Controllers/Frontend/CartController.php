@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
+use App\Models\Category;
 
 class CartController extends Controller
 {
@@ -26,7 +25,7 @@ class CartController extends Controller
     public function index()
     {
 
-        return view('pages.cart', [
+        return view('frontend.cart', [
             'all_categories' => $this->category->get(),
         ]);
     }

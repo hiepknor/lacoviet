@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
+use App\Models\Category;
 
 class EventController extends Controller
 {
@@ -14,7 +14,7 @@ class EventController extends Controller
     }
 
     public function index() {
-        return view('pages.event', [
+        return view('frontend.event', [
             'all_categories' => $this->category->get(),
         ]);
     }

@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Offer;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
+use App\Models\Category;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -14,31 +13,26 @@ class ProductController extends Controller
 
     private $product;
 
-    private $offer;
-
     public function __construct
     (
         Category $category,
-        Product $product,
-        Offer $offer
+        Product $product
     )
     {
         $this->category = $category;
         $this->product = $product;
-        $this->offer = $offer;
     }
 
     public function index() {
-        return view('pages.product', [
+        return view('frontend.product', [
             'all_categories' => $this->category->get(),
-            'product' => $this->product->get(),
-            'offer' => $this->offer
+            'product' => $this->product->get()
         ]);
     }
 
     public function detail($categorySlug, $productSlug) {
         $product = $this->product->whereSlug($productSlug)->first();
-        return view('pages.product-detail', [
+        return view('frontend.product-detail', [
             'all_categories' => $this->category->get(),
             'product' => $product,
         ]);

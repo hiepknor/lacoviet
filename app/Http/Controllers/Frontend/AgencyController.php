@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class AgencyController extends Controller
 {
@@ -14,7 +15,7 @@ class AgencyController extends Controller
     }
 
     public function index() {
-        return view('pages.agency', [
+        return view('frontend.agency', [
             'all_categories' => $this->category->get(),
         ]);
     }

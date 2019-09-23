@@ -1,4 +1,4 @@
-@extends('app')
+@extends('frontend.app')
 
 @section('pageTitle', 'Danh mục')
 
