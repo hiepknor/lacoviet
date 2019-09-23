@@ -92,14 +92,22 @@
                                             <tr class="gradeX">
                                                 <td>{{ $category->id }}</td>
                                                 <td>{{ $category->name }}</td>
-                                                <td>{{ $category->parent_id }}</td>
+                                                @if($category->parent_id == 0)
+                                                    <td>-</td>
+                                                @else
+                                                    <td>{{ DB::table('categories')->where('id', $category->parent_id)->first()->name }}</td>
+                                                @endif
                                                 <td>{{ $category->url }}</td>
                                                 @if($category->status == 1)
                                                     <td><div class="badge badge-success">Active</div></td>
                                                 @else
                                                     <td><div class="badge badge-danger">Not Active</div></td>
                                                 @endif
-                                                <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                                                <td>
+                                                    <a href="{{ URL::to('admin/add-category') }}" class="btn btn-primary">Add</a>
+                                                    <a href="{{ URL::to('admin/edit-category/' . $category->id) }}" class="btn btn-secondary">Edit</a>
+                                                    <a href="#" class="btn btn-danger">Delete</a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </table>
@@ -107,19 +115,7 @@
                             </div>
                             <div class="card-footer text-right">
                                 <nav class="d-inline-block">
-                                    <ul class="pagination mb-0">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                                        </li>
-                                        <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">2</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                        </li>
-                                    </ul>
+                                    {{ $categories->links('vendor.pagination.backend-pagination') }}
                                 </nav>
                             </div>
                         </div>

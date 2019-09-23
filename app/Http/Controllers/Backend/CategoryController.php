@@ -48,9 +48,7 @@ class CategoryController extends Controller
 
     public function viewCategories(){
 
-    	$categories = Category::get();
-    	$categories = json_decode(json_encode($categories));
-    	/*echo "<pre>"; print_r($categories); die;*/
+    	$categories = Category::paginate(10);
     	return view('backend.categories.view_categories')->with(compact('categories'));
     }
 }
