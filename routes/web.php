@@ -11,6 +11,7 @@
 |
 */
 
+// Backend
 Route::match(['get', 'post'], '/admin','Backend\Auth\LoginController@login')->name('login');
 
 Route::group(['middleware' => ['auth']],function(){

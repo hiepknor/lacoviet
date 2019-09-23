@@ -1,90 +1,84 @@
 @extends('layouts.backend.app')
 @section('content')
+    <!-- Main Content -->
+    <div class="main-content">
+        <section class="section">
+            <div class="section-header">
+                <h1>Products</h1>
 
-<div id="content">
-  <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">Products</a> <a href="#" class="current">View Products</a> </div>
-    <h1>Products</h1>
-     @if(Session::has('flash_message_error'))
-        <div class="alert alert-error alert-block">
-            <button type="button" class="close" data-dismiss="alert">×</button> 
-                <strong>{!! session('flash_message_error') !!}</strong>
-        </div>
-    @endif   
-    @if(Session::has('flash_message_success'))
-        <div class="alert alert-success alert-block">
-            <button type="button" class="close" data-dismiss="alert">×</button> 
-                <strong>{!! session('flash_message_success') !!}</strong>
-        </div>
-    @endif   
-  </div>
-  <div class="container-fluid">
-    <hr>
-    <div class="row-fluid">
-      <div class="span12">
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5>View Products</h5>
-          </div>
-          <div class="widget-content nopadding">
-            <table class="table table-bordered data-table">
-              <thead>
-                <tr>
-                  <th>Product ID</th>
-                  <th>Category ID</th>
-                  <th>Category Name</th>
-                  <th>Product Name</th>
-                  <th>Product Code</th>
-                  <th>Product Color</th>
-                  <th>Price</th>
-                  <th>Image</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-              	@foreach($products as $product)
-                <tr class="gradeX">
-                  <td>{{ $product->id }}</td>
-                  <td>{{ $product->category_id }}</td>
-                  <td>{{ $product->category_name }}</td>
-                  <td>{{ $product->product_name }}</td>
-                  <td>{{ $product->product_code }}</td>
-                  <td>{{ $product->product_color }}</td>
-                  <td>{{ $product->price }}</td>
-                  <td>
-                    @if(!empty($product->image))
-                      <img src="{{ asset('/images/backend/products/small/'.$product->image) }}" style="width:60px;">
-                    @endif
-                  </td>
-                  <td class="center"><a href="#myModal{{ $product->id }}" data-toggle="modal" class="btn btn-success btn-mini">View</a> <a href="{{ url('/admin/edit-product/'.$product->id) }}" class="btn btn-primary btn-mini">Edit</a> <a id="delCat" href="{{ url('/admin/delete-product/'.$product->id) }}" class="btn btn-danger btn-mini">Delete</a></td>
-                </tr>
-                    <div id="myModal{{ $product->id }}" class="modal hide">
-                      <div class="modal-header">
-                        <button data-dismiss="modal" class="close" type="button">×</button>
-                        <h3>{{ $product->product_name }} Full Details</h3>
-                      </div>
-                      <div class="modal-body">
-                        <p>Product ID: {{ $product->id }}</p>
-                        <p>Category ID: {{ $product->category_id }}</p>
-                        <p>Product Code: {{ $product->product_code }}</p>
-                        <p>Product Color: {{ $product->product_color }}</p>
-                        <p>Price: {{ $product->price }}</p>
-                        <p>Fabric: </p>
-                        <p>Material: </p>
-                        <p>Description: {{ $product->description }}</p>
-                      </div>
+                <!-- Breadcrumb -->
+                <div class="section-header-breadcrumb">
+                    <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+                    <div class="breadcrumb-item"><a href="#">Products</a></div>
+                </div>
+            </div>
+
+            <div class="section-body">
+                <h2 class="section-title">List products</h2>
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4></h4>
+                                <div class="card-header-action">
+                                    <a href="{{ URL::to('admin/add-product') }}" class="btn btn-primary">Add
+                                        product</a>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-md">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Category</th>
+                                            <th>Sku</th>
+                                            <th>Price</th>
+                                            <th>Url</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        @foreach($products as $product)
+                                            <tr class="gradeX">
+                                                <td>{{ $product->id }}</td>
+                                                <td>{{ $product->name }}</td>
+                                                <td>{{ DB::table('categories')->where('id', $product->category_id)->first()->name }}</td>
+                                                <td>{{ $product->sku }}</td>
+                                                @if($product->promotion_price == 0)
+                                                    <td>{{ $product->unit_price }}</td>
+                                                @else
+                                                    <td>{{ $product->promotion_price }}</td>
+                                                @endif
+                                                <td>{{ $product->url }}</td>
+                                                @if($product->status == 1)
+                                                    <td>
+                                                        <div class="badge badge-success">Active</div>
+                                                    </td>
+                                                @else
+                                                    <td>
+                                                        <div class="badge badge-danger">Not Active</div>
+                                                    </td>
+                                                @endif
+                                                <td>
+                                                    <a href="{{ URL::to('admin/edit-product/' . $product->id) }}"
+                                                       class="btn btn-secondary">Edit</a>
+                                                    <a href="{{ URL::to('admin/delete-product/' . $product->id) }}"
+                                                       class="btn btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer text-right">
+                                <nav class="d-inline-block">
+                                    {{ $products->links('vendor.pagination.backend-pagination') }}
+                                </nav>
+                            </div>
+                        </div>
                     </div>
-                @endforeach
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+                </div>
+            </div>
+        </section>
     </div>
-  </div>
-</div>
-
-
-
 @endsection

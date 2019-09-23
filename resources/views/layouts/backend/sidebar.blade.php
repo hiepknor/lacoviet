@@ -11,7 +11,7 @@
       <li><a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i><span>Dashboard</span></a>
       <li class="menu-header">Sales</li>
       <li><a class="nav-link" href="{{ URL::to('admin/view-categories') }}"><i class="fas fa-list-ul"></i><span>Categories</span></a>
-      <li><a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-gift"></i><span>Products</span></a>
+      <li><a class="nav-link" href="{{ URL::to('admin/view-products') }}"><i class="fas fa-gift"></i><span>Products</span></a>
       <li><a class="nav-link" href="{{ URL::to('admin/view-categories') }}"><i class="fas fa-store"></i><span>Orders</span></a>
       <li class="menu-header">News</li>
       <li><a class="nav-link" href="{{ route('dashboard') }}"><i class="far fa-newspaper"></i><span>Articles</span></a>
