@@ -30,6 +30,7 @@
                                     <table class="table table-striped table-md">
                                         <tr>
                                             <th>#</th>
+                                            <th>Image</th>
                                             <th>Name</th>
                                             <th>Category</th>
                                             <th>Sku</th>
@@ -41,6 +42,7 @@
                                         @foreach($products as $product)
                                             <tr class="gradeX">
                                                 <td>{{ $product->id }}</td>
+                                                <td width="50px"><img alt="image" src="{{ asset('images/backend/products/product-2.jpg') }}" class="rounded-circle" width="50" data-toggle="tooltip" title="" data-original-title="Wildan Ahdian"></td>
                                                 <td>{{ $product->name }}</td>
                                                 <td>{{ DB::table('categories')->where('id', $product->category_id)->first()->name }}</td>
                                                 <td>{{ $product->sku }}</td>

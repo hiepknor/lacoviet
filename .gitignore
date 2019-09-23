@@ -91,5 +91,3 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
-# Ignore product images
-/public/images/backend/products
