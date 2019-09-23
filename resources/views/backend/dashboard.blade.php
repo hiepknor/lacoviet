@@ -1,302 +1,539 @@
 @extends('layouts.backend.app')
+
 @section('content')
-
-<!--main-container-part-->
-<div id="content">
-<!--breadcrumbs-->
-  <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-  </div>
-<!--End-breadcrumbs-->
-
-<!--Action boxes-->
-  <div class="container-fluid">
-    <div class="quick-actions_homepage">
-      <ul class="quick-actions">
-        <li class="bg_lb"> <a href="index.html"> <i class="icon-dashboard"></i> <span class="label label-important">20</span> My Dashboard </a> </li>
-        <li class="bg_lg span3"> <a href="charts.html"> <i class="icon-signal"></i> Charts</a> </li>
-        <li class="bg_ly"> <a href="widgets.html"> <i class="icon-inbox"></i><span class="label label-success">101</span> Widgets </a> </li>
-        <li class="bg_lo"> <a href="tables.html"> <i class="icon-th"></i> Tables</a> </li>
-        <li class="bg_ls"> <a href="grid.html"> <i class="icon-fullscreen"></i> Full width</a> </li>
-        <li class="bg_lo span3"> <a href="form-common.html"> <i class="icon-th-list"></i> Forms</a> </li>
-        <li class="bg_ls"> <a href="buttons.html"> <i class="icon-tint"></i> Buttons</a> </li>
-        <li class="bg_lb"> <a href="interface.html"> <i class="icon-pencil"></i>Elements</a> </li>
-        <li class="bg_lg"> <a href="calendar.html"> <i class="icon-calendar"></i> Calendar</a> </li>
-        <li class="bg_lr"> <a href="error404.html"> <i class="icon-info-sign"></i> Error</a> </li>
-
-      </ul>
-    </div>
-<!--End-Action boxes-->    
-
-<!--Chart-box-->    
-    <div class="row-fluid">
-      <div class="widget-box">
-        <div class="widget-title bg_lg"><span class="icon"><i class="icon-signal"></i></span>
-          <h5>Site Analytics</h5>
-        </div>
-        <div class="widget-content" >
-          <div class="row-fluid">
-            <div class="span9">
-              <div class="chart"></div>
-            </div>
-            <div class="span3">
-              <ul class="site-stats">
-                <li class="bg_lh"><i class="icon-user"></i> <strong>2540</strong> <small>Total Users</small></li>
-                <li class="bg_lh"><i class="icon-plus"></i> <strong>120</strong> <small>New Users </small></li>
-                <li class="bg_lh"><i class="icon-shopping-cart"></i> <strong>656</strong> <small>Total Shop</small></li>
-                <li class="bg_lh"><i class="icon-tag"></i> <strong>9540</strong> <small>Total Orders</small></li>
-                <li class="bg_lh"><i class="icon-repeat"></i> <strong>10</strong> <small>Pending Orders</small></li>
-                <li class="bg_lh"><i class="icon-globe"></i> <strong>8540</strong> <small>Online Orders</small></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-<!--End-Chart-box--> 
-    <hr/>
-    <div class="row-fluid">
-      <div class="span6">
-        <div class="widget-box">
-          <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2"><span class="icon"><i class="icon-chevron-down"></i></span>
-            <h5>Latest Posts</h5>
-          </div>
-          <div class="widget-content nopadding collapse in" id="collapseG2">
-            <ul class="recent-posts">
-              <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{ asset('images/backend/demo/av1.jpg') }}"> </div>
-                <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-                  <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+  <!-- Main Content -->
+  <div class="main-content">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="card card-statistic-2">
+            <div class="card-stats">
+              <div class="card-stats-title">Order Statistics -
+                <div class="dropdown d-inline">
+                  <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#"
+                     id="orders-month">August</a>
+                  <ul class="dropdown-menu dropdown-menu-sm">
+                    <li class="dropdown-title">Select Month</li>
+                    <li><a href="#" class="dropdown-item">January</a></li>
+                    <li><a href="#" class="dropdown-item">February</a></li>
+                    <li><a href="#" class="dropdown-item">March</a></li>
+                    <li><a href="#" class="dropdown-item">April</a></li>
+                    <li><a href="#" class="dropdown-item">May</a></li>
+                    <li><a href="#" class="dropdown-item">June</a></li>
+                    <li><a href="#" class="dropdown-item">July</a></li>
+                    <li><a href="#" class="dropdown-item active">August</a></li>
+                    <li><a href="#" class="dropdown-item">September</a></li>
+                    <li><a href="#" class="dropdown-item">October</a></li>
+                    <li><a href="#" class="dropdown-item">November</a></li>
+                    <li><a href="#" class="dropdown-item">December</a></li>
+                  </ul>
                 </div>
-              </li>
-              <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{ asset('images/backend/demo/av2.jpg') }}"> </div>
-                <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-                  <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
-                </div>
-              </li>
-              <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{ asset('images/backend/demo/av4.jpg') }}"> </div>
-                <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-                  <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
-                </div>
-              <li>
-                <button class="btn btn-warning btn-mini">View All</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
-            <h5>To Do list</h5>
-          </div>
-          <div class="widget-content">
-            <div class="todo">
-              <ul>
-                <li class="clearfix">
-                  <div class="txt"> Luanch This theme on Themeforest <span class="by label">Alex</span></div>
-                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-                </li>
-                <li class="clearfix">
-                  <div class="txt"> Manage Pending Orders <span class="date badge badge-warning">Today</span> </div>
-                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-                </li>
-                <li class="clearfix">
-                  <div class="txt"> MAke your desk clean <span class="by label">Admin</span></div>
-                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-                </li>
-                <li class="clearfix">
-                  <div class="txt"> Today we celebrate the theme <span class="date badge badge-info">08.03.2013</span> </div>
-                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-                </li>
-                <li class="clearfix">
-                  <div class="txt"> Manage all the orders <span class="date badge badge-important">12.03.2013</span> </div>
-                  <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
-            <h5>Progress Box</h5>
-          </div>
-          <div class="widget-content">
-            <ul class="unstyled">
-              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 81% Clicks <span class="pull-right strong">567</span>
-                <div class="progress progress-striped ">
-                  <div style="width: 81%;" class="bar"></div>
-                </div>
-              </li>
-              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 72% Uniquie Clicks <span class="pull-right strong">507</span>
-                <div class="progress progress-success progress-striped ">
-                  <div style="width: 72%;" class="bar"></div>
-                </div>
-              </li>
-              <li> <span class="icon24 icomoon-icon-arrow-down-2 red"></span> 53% Impressions <span class="pull-right strong">457</span>
-                <div class="progress progress-warning progress-striped ">
-                  <div style="width: 53%;" class="bar"></div>
-                </div>
-              </li>
-              <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 3% Online Users <span class="pull-right strong">8</span>
-                <div class="progress progress-danger progress-striped ">
-                  <div style="width: 3%;" class="bar"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="widget-box">
-          <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG3" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
-            <h5>News updates</h5>
-          </div>
-          <div class="widget-content nopadding updates collapse in" id="collapseG3">
-            <div class="new-update clearfix"><i class="icon-ok-sign"></i>
-              <div class="update-done"><a title="" href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a> <span>dolor sit amet, consectetur adipiscing eli</span> </div>
-              <div class="update-date"><span class="update-day">20</span>jan</div>
-            </div>
-            <div class="new-update clearfix"> <i class="icon-gift"></i> <span class="update-notice"> <a title="" href="#"><strong>Congratulation Maruti, Happy Birthday </strong></a> <span>many many happy returns of the day</span> </span> <span class="update-date"><span class="update-day">11</span>jan</span> </div>
-            <div class="new-update clearfix"> <i class="icon-move"></i> <span class="update-alert"> <a title="" href="#"><strong>Maruti is a Responsive Admin theme</strong></a> <span>But already everything was solved. It will ...</span> </span> <span class="update-date"><span class="update-day">07</span>Jan</span> </div>
-            <div class="new-update clearfix"> <i class="icon-leaf"></i> <span class="update-done"> <a title="" href="#"><strong>Envato approved Maruti Admin template</strong></a> <span>i am very happy to approved by TF</span> </span> <span class="update-date"><span class="update-day">05</span>jan</span> </div>
-            <div class="new-update clearfix"> <i class="icon-question-sign"></i> <span class="update-notice"> <a title="" href="#"><strong>I am alwayse here if you have any question</strong></a> <span>we glad that you choose our template</span> </span> <span class="update-date"><span class="update-day">01</span>jan</span> </div>
-          </div>
-        </div>
-        
-      </div>
-      <div class="span6">
-        <div class="widget-box widget-chat">
-          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
-            <h5>Chat Option</h5>
-          </div>
-          <div class="widget-content nopadding collapse in" id="collapseG4">
-            <div class="chat-users panel-right2">
-              <div class="panel-title">
-                <h5>Online Users</h5>
               </div>
-              <div class="panel-content nopadding">
-                <ul class="contact-list">
-                  <li id="user-Alex" class="online"><a href=""><img alt="" src="{{ asset('images/backend/demo/av1.jpg') }}" /> <span>Alex</span></a></li>
-                  <li id="user-Linda"><a href=""><img alt="" src="{{ asset('images/backend/demo/av2.jpg') }}" /> <span>Linda</span></a></li>
-                  <li id="user-John" class="online new"><a href=""><img alt="" src="{{ asset('images/backend/demo/av3.jpg') }}" /> <span>John</span></a><span class="msg-count badge badge-info">3</span></li>
-                  <li id="user-Mark" class="online"><a href=""><img alt="" src="{{ asset('images/backend/demo/av4.jpg') }}" /> <span>Mark</span></a></li>
-                  <li id="user-Maxi" class="online"><a href=""><img alt="" src="{{ asset('images/backend/demo/av5.jpg') }}" /> <span>Maxi</span></a></li>
+              <div class="card-stats-items">
+                <div class="card-stats-item">
+                  <div class="card-stats-item-count">24</div>
+                  <div class="card-stats-item-label">Pending</div>
+                </div>
+                <div class="card-stats-item">
+                  <div class="card-stats-item-count">12</div>
+                  <div class="card-stats-item-label">Shipping</div>
+                </div>
+                <div class="card-stats-item">
+                  <div class="card-stats-item-count">23</div>
+                  <div class="card-stats-item-label">Completed</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-icon shadow-primary bg-primary">
+              <i class="fas fa-archive"></i>
+            </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Total Orders</h4>
+              </div>
+              <div class="card-body">
+                59
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="card card-statistic-2">
+            <div class="card-chart">
+              <canvas id="balance-chart" height="80"></canvas>
+            </div>
+            <div class="card-icon shadow-primary bg-primary">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Balance</h4>
+              </div>
+              <div class="card-body">
+                $187,13
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="card card-statistic-2">
+            <div class="card-chart">
+              <canvas id="sales-chart" height="80"></canvas>
+            </div>
+            <div class="card-icon shadow-primary bg-primary">
+              <i class="fas fa-shopping-bag"></i>
+            </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Sales</h4>
+              </div>
+              <div class="card-body">
+                4,732
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-header">
+              <h4>Budget vs Sales</h4>
+            </div>
+            <div class="card-body">
+              <canvas id="myChart" height="158"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card gradient-bottom">
+            <div class="card-header">
+              <h4>Top 5 Products</h4>
+              <div class="card-header-action dropdown">
+                <a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">Month</a>
+                <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                  <li class="dropdown-title">Select Period</li>
+                  <li><a href="#" class="dropdown-item">Today</a></li>
+                  <li><a href="#" class="dropdown-item">Week</a></li>
+                  <li><a href="#" class="dropdown-item active">Month</a></li>
+                  <li><a href="#" class="dropdown-item">This Year</a></li>
                 </ul>
               </div>
             </div>
-            <div class="chat-content panel-left2">
-              <div class="chat-messages" id="chat-messages">
-                <div id="chat-messages-inner"></div>
+            <div class="card-body" id="top-5-scroll">
+              <ul class="list-unstyled list-unstyled-border">
+                <li class="media">
+                  <img class="mr-3 rounded" width="55"
+                       src="{{ asset('images/backend/products/product-3-50.png') }}"
+                       alt="product">
+                  <div class="media-body">
+                    <div class="float-right">
+                      <div class="font-weight-600 text-muted text-small">86 Sales</div>
+                    </div>
+                    <div class="media-title">oPhone S9 Limited</div>
+                    <div class="mt-1">
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-primary" data-width="64%"></div>
+                        <div class="budget-price-label">$68,714</div>
+                      </div>
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-danger" data-width="43%"></div>
+                        <div class="budget-price-label">$38,700</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="media">
+                  <img class="mr-3 rounded" width="55"
+                       src="{{ asset('images/backend/products/product-4-50.png') }}"
+                       alt="product">
+                  <div class="media-body">
+                    <div class="float-right">
+                      <div class="font-weight-600 text-muted text-small">67 Sales</div>
+                    </div>
+                    <div class="media-title">iBook Pro 2018</div>
+                    <div class="mt-1">
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-primary" data-width="84%"></div>
+                        <div class="budget-price-label">$107,133</div>
+                      </div>
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-danger" data-width="60%"></div>
+                        <div class="budget-price-label">$91,455</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="media">
+                  <img class="mr-3 rounded" width="55"
+                       src="{{ asset('images/backend/products/product-1-50.png') }}"
+                       alt="product">
+                  <div class="media-body">
+                    <div class="float-right">
+                      <div class="font-weight-600 text-muted text-small">63 Sales</div>
+                    </div>
+                    <div class="media-title">Headphone Blitz</div>
+                    <div class="mt-1">
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-primary" data-width="34%"></div>
+                        <div class="budget-price-label">$3,717</div>
+                      </div>
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-danger" data-width="28%"></div>
+                        <div class="budget-price-label">$2,835</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="media">
+                  <img class="mr-3 rounded" width="55"
+                       src="{{ asset('images/backend/products/product-3-50.png') }}"
+                       alt="product">
+                  <div class="media-body">
+                    <div class="float-right">
+                      <div class="font-weight-600 text-muted text-small">28 Sales</div>
+                    </div>
+                    <div class="media-title">oPhone X Lite</div>
+                    <div class="mt-1">
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-primary" data-width="45%"></div>
+                        <div class="budget-price-label">$13,972</div>
+                      </div>
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-danger" data-width="30%"></div>
+                        <div class="budget-price-label">$9,660</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="media">
+                  <img class="mr-3 rounded" width="55"
+                       src="{{ asset('images/backend/products/product-5-50.png') }}"
+                       alt="product">
+                  <div class="media-body">
+                    <div class="float-right">
+                      <div class="font-weight-600 text-muted text-small">19 Sales</div>
+                    </div>
+                    <div class="media-title">Old Camera</div>
+                    <div class="mt-1">
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-primary" data-width="35%"></div>
+                        <div class="budget-price-label">$7,391</div>
+                      </div>
+                      <div class="budget-price">
+                        <div class="budget-price-square bg-danger" data-width="28%"></div>
+                        <div class="budget-price-label">$5,472</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer pt-3 d-flex justify-content-center">
+              <div class="budget-price justify-content-center">
+                <div class="budget-price-square bg-primary" data-width="20"></div>
+                <div class="budget-price-label">Selling Price</div>
               </div>
-              <div class="chat-message well">
-                <button class="btn btn-success">Send</button>
-                <span class="input-box">
-                <input type="text" name="msg-box" id="msg-box" />
-                </span> </div>
+              <div class="budget-price justify-content-center">
+                <div class="budget-price-square bg-danger" data-width="20"></div>
+                <div class="budget-price-label">Budget Price</div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="widget-box">
-          <div class="widget-title"><span class="icon"><i class="icon-user"></i></span>
-            <h5>Our Partner (Box with Fix height)</h5>
-          </div>
-          <div class="widget-content nopadding fix_hgt">
-            <ul class="recent-posts">
-              <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{ asset('images/backend/demo/av1.jpg') }}"> </div>
-                <div class="article-post"> <span class="user-info">John Deo</span>
-                  <p>Web Desginer &amp; creative Front end developer</p>
-                </div>
-              </li>
-              <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{ asset('images/backend/demo/av2.jpg') }}"> </div>
-                <div class="article-post"> <span class="user-info">John Deo</span>
-                  <p>Web Desginer &amp; creative Front end developer</p>
-                </div>
-              </li>
-              <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{ asset('images/backend/demo/av4.jpg') }}"> </div>
-                <div class="article-post"> <span class="user-info">John Deo</span>
-                  <p>Web Desginer &amp; creative Front end developer</p>
-                </div>
-            </ul>
-          </div>
-        </div>
-        <div class="accordion" id="collapse-group">
-          <div class="accordion-group widget-box">
-            <div class="accordion-heading">
-              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-                <h5>Accordion Example 1</h5>
-                </a> </div>
-            </div>
-            <div class="collapse in accordion-body" id="collapseGOne">
-              <div class="widget-content"> It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
-            </div>
-          </div>
-          <div class="accordion-group widget-box">
-            <div class="accordion-heading">
-              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGTwo" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-                <h5>Accordion Example 2</h5>
-                </a> </div>
-            </div>
-            <div class="collapse accordion-body" id="collapseGTwo">
-              <div class="widget-content">And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.</div>
-            </div>
-          </div>
-          <div class="accordion-group widget-box">
-            <div class="accordion-heading">
-              <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGThree" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-                <h5>Accordion Example 3</h5>
-                </a> </div>
-            </div>
-            <div class="collapse accordion-body" id="collapseGThree">
-              <div class="widget-content"> Waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just </div>
-            </div>
-          </div>
-        </div>
-        <div class="widget-box collapsible">
-          <div class="widget-title"> <a data-toggle="collapse" href="#collapseOne"> <span class="icon"><i class="icon-arrow-right"></i></span>
-            <h5>Toggle, Open by default, </h5>
-            </a> </div>
-          <div id="collapseOne" class="collapse in">
-            <div class="widget-content"> This box is opened by default, paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
-          </div>
-          <div class="widget-title"> <a data-toggle="collapse" href="#collapseTwo"> <span class="icon"><i class="icon-remove"></i></span>
-            <h5>Toggle, closed by default</h5>
-            </a> </div>
-          <div id="collapseTwo" class="collapse">
-            <div class="widget-content"> This box is now open </div>
-          </div>
-          <div class="widget-title"> <a data-toggle="collapse" href="#collapseThree"> <span class="icon"><i class="icon-remove"></i></span>
-            <h5>Toggle, closed by default</h5>
-            </a> </div>
-          <div id="collapseThree" class="collapse">
-            <div class="widget-content"> This box is now open </div>
-          </div>
-        </div>
-        <div class="widget-box">
-          <div class="widget-title">
-            <ul class="nav nav-tabs">
-              <li class="active"><a data-toggle="tab" href="#tab1">Tab1</a></li>
-              <li><a data-toggle="tab" href="#tab2">Tab2</a></li>
-              <li><a data-toggle="tab" href="#tab3">Tab3</a></li>
-            </ul>
-          </div>
-          <div class="widget-content tab-content">
-            <div id="tab1" class="tab-pane active">
-              <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment.</p>
-              <img src="{{ asset('images/backend/demo/demo-image1.jpg') }}" alt="demo-image"/></div>
-            <div id="tab2" class="tab-pane"> <img src="{{ asset('images/backend/demo/demo-image2.jpg') }}" alt="demo-image"/>
-              <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment.</p>
-            </div>
-            <div id="tab3" class="tab-pane">
-              <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. </p>
-              <img src="{{ asset('images/backend/demo/demo-image3.jpg') }}" alt="demo-image"/></div>
           </div>
         </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h4>Best Products</h4>
+            </div>
+            <div class="card-body">
+              <div class="owl-carousel owl-theme" id="products-carousel">
+                <div>
+                  <div class="product-item pb-3">
+                    <div class="product-image">
+                      <img alt="image"
+                           src="{{ asset('images/backend/products/product-4-50.png') }}"
+                           class="img-fluid">
+                    </div>
+                    <div class="product-details">
+                      <div class="product-name">iBook Pro 2018</div>
+                      <div class="product-review">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                      <div class="text-muted text-small">67 Sales</div>
+                      <div class="product-cta">
+                        <a href="#" class="btn btn-primary">Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="product-item">
+                    <div class="product-image">
+                      <img alt="image"
+                           src="{{ asset('images/backend/products/product-3-50.png') }}"
+                           class="img-fluid">
+                    </div>
+                    <div class="product-details">
+                      <div class="product-name">oPhone S9 Limited</div>
+                      <div class="product-review">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                      </div>
+                      <div class="text-muted text-small">86 Sales</div>
+                      <div class="product-cta">
+                        <a href="#" class="btn btn-primary">Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="product-item">
+                    <div class="product-image">
+                      <img alt="image"
+                           src="{{ asset('images/backend/products/product-1-50.png') }}"
+                           class="img-fluid">
+                    </div>
+                    <div class="product-details">
+                      <div class="product-name">Headphone Blitz</div>
+                      <div class="product-review">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="text-muted text-small">63 Sales</div>
+                      <div class="product-cta">
+                        <a href="#" class="btn btn-primary">Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h4>Top Countries</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="text-title mb-2">July</div>
+                  <ul class="list-unstyled list-unstyled-border list-unstyled-noborder mb-0">
+                    <li class="media">
+                      <img class="img-fluid mt-1 img-shadow"
+                           src="{{ asset('css/backend/flag-icon-css/flags/4x3/id.svg') }}"
+                           alt="image" width="40">
+                      <div class="media-body ml-3">
+                        <div class="media-title">Indonesia</div>
+                        <div class="text-small text-muted">3,282 <i
+                                  class="fas fa-caret-down text-danger"></i></div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <img class="img-fluid mt-1 img-shadow"
+                           src="{{ asset('css/backend/flag-icon-css/flags/4x3/my.svg') }}"
+                           alt="image" width="40">
+                      <div class="media-body ml-3">
+                        <div class="media-title">Malaysia</div>
+                        <div class="text-small text-muted">2,976 <i
+                                  class="fas fa-caret-down text-danger"></i></div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <img class="img-fluid mt-1 img-shadow"
+                           src="{{ asset('css/backend/flag-icon-css/flags/4x3/us.svg') }}"
+                           alt="image" width="40">
+                      <div class="media-body ml-3">
+                        <div class="media-title">United States</div>
+                        <div class="text-small text-muted">1,576 <i
+                                  class="fas fa-caret-up text-success"></i></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-sm-6 mt-sm-0 mt-4">
+                  <div class="text-title mb-2">August</div>
+                  <ul class="list-unstyled list-unstyled-border list-unstyled-noborder mb-0">
+                    <li class="media">
+                      <img class="img-fluid mt-1 img-shadow"
+                           src="{{ asset('css/backend/flag-icon-css/flags/4x3/id.svg') }}"
+                           alt="image" width="40">
+                      <div class="media-body ml-3">
+                        <div class="media-title">Indonesia</div>
+                        <div class="text-small text-muted">3,486 <i
+                                  class="fas fa-caret-up text-success"></i></div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <img class="img-fluid mt-1 img-shadow"
+                           src="{{ asset('css/backend/flag-icon-css/flags/4x3/ps.svg') }}"
+                           alt="image" width="40">
+                      <div class="media-body ml-3">
+                        <div class="media-title">Palestine</div>
+                        <div class="text-small text-muted">3,182 <i
+                                  class="fas fa-caret-up text-success"></i></div>
+                      </div>
+                    </li>
+                    <li class="media">
+                      <img class="img-fluid mt-1 img-shadow"
+                           src="{{ asset('css/backend/flag-icon-css/flags/4x3/de.svg') }}"
+                           alt="image" width="40">
+                      <div class="media-body ml-3">
+                        <div class="media-title">Germany</div>
+                        <div class="text-small text-muted">2,317 <i
+                                  class="fas fa-caret-down text-danger"></i></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h4>Invoices</h4>
+              <div class="card-header-action">
+                <a href="#" class="btn btn-danger">View More <i
+                          class="fas fa-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive table-invoice">
+                <table class="table table-striped">
+                  <tr>
+                    <th>Invoice ID</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Due Date</th>
+                    <th>Action</th>
+                  </tr>
+                  <tr>
+                    <td><a href="#">INV-87239</a></td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td>
+                      <div class="badge badge-warning">Unpaid</div>
+                    </td>
+                    <td>July 19, 2018</td>
+                    <td>
+                      <a href="#" class="btn btn-primary">Detail</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">INV-48574</a></td>
+                    <td class="font-weight-600">Hasan Basri</td>
+                    <td>
+                      <div class="badge badge-success">Paid</div>
+                    </td>
+                    <td>July 21, 2018</td>
+                    <td>
+                      <a href="#" class="btn btn-primary">Detail</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">INV-76824</a></td>
+                    <td class="font-weight-600">Muhamad Nuruzzaki</td>
+                    <td>
+                      <div class="badge badge-warning">Unpaid</div>
+                    </td>
+                    <td>July 22, 2018</td>
+                    <td>
+                      <a href="#" class="btn btn-primary">Detail</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">INV-84990</a></td>
+                    <td class="font-weight-600">Agung Ardiansyah</td>
+                    <td>
+                      <div class="badge badge-warning">Unpaid</div>
+                    </td>
+                    <td>July 22, 2018</td>
+                    <td>
+                      <a href="#" class="btn btn-primary">Detail</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">INV-87320</a></td>
+                    <td class="font-weight-600">Ardian Rahardiansyah</td>
+                    <td>
+                      <div class="badge badge-success">Paid</div>
+                    </td>
+                    <td>July 28, 2018</td>
+                    <td>
+                      <a href="#" class="btn btn-primary">Detail</a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-hero">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="far fa-question-circle"></i>
+              </div>
+              <h4>14</h4>
+              <div class="card-description">Customers need help</div>
+            </div>
+            <div class="card-body p-0">
+              <div class="tickets-list">
+                <a href="#" class="ticket-item">
+                  <div class="ticket-title">
+                    <h4>My order hasn't arrived yet</h4>
+                  </div>
+                  <div class="ticket-info">
+                    <div>Laila Tazkiah</div>
+                    <div class="bullet"></div>
+                    <div class="text-primary">1 min ago</div>
+                  </div>
+                </a>
+                <a href="#" class="ticket-item">
+                  <div class="ticket-title">
+                    <h4>Please cancel my order</h4>
+                  </div>
+                  <div class="ticket-info">
+                    <div>Rizal Fakhri</div>
+                    <div class="bullet"></div>
+                    <div>2 hours ago</div>
+                  </div>
+                </a>
+                <a href="#" class="ticket-item">
+                  <div class="ticket-title">
+                    <h4>Do you see my mother?</h4>
+                  </div>
+                  <div class="ticket-info">
+                    <div>Syahdan Ubaidillah</div>
+                    <div class="bullet"></div>
+                    <div>6 hours ago</div>
+                  </div>
+                </a>
+                <a href="features-tickets.html" class="ticket-item ticket-more">
+                  View All <i class="fas fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-</div>
-<!--end-main-container-part-->
-
 @endsection

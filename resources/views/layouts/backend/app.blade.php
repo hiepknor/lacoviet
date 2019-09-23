@@ -1,73 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Matrix Admin</title>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="{{ asset('css/backend/bootstrap.min.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/backend/bootstrap-responsive.min.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/backend/fullcalendar.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/backend/matrix-style.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/backend/matrix-media.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('fonts/backend/font-awesome/css/font-awesome.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/backend/jquery.gritter.css') }}"/>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Ecommerce Dashboard &mdash; Stisla</title>
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="{{ asset('css/backend/jqvmap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/owl.theme.default.min.css') }}">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{{ asset('css/backend/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/components.css') }}">
 </head>
+
 <body>
+<div id="app">
+    <div class="main-wrapper">
+        @include('layouts.backend.header')
 
-@include('layouts.backend.header')
+        @include('layouts.backend.sidebar')
 
-@include('layouts.backend.sidebar')
+        @yield('content')
 
-@yield('content')
+        @include('layouts.backend.footer')
+    </div>
+</div>
 
-@include('layouts.backend.footer')
+<!-- General JS Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="{{ asset('js/backend/stisla.js') }}"></script>
 
-<script src="{{ asset('js/backend/excanvas.min.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.min.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.ui.custom.js') }}"></script>
-<script src="{{ asset('js/backend/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.flot.min.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.flot.resize.min.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.peity.min.js') }}"></script>
-<script src="{{ asset('js/backend/fullcalendar.min.js') }}"></script>
-<script src="{{ asset('js/backend/matrix.js') }}"></script>
-<script src="{{ asset('js/backend/matrix.dashboard.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.gritter.min.js') }}"></script>
-<script src="{{ asset('js/backend/matrix.interface.js') }}"></script>
-<script src="{{ asset('js/backend/matrix.chat.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.validate.js') }}"></script>
-<script src="{{ asset('js/backend/matrix.form_validation.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.wizard.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.uniform.js') }}"></script>
-<script src="{{ asset('js/backend/select2.min.js') }}"></script>
-<script src="{{ asset('js/backend/matrix.popover.js') }}"></script>
-<script src="{{ asset('js/backend/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/backend/matrix.tables.js') }}"></script>
+<!-- JS Libraies -->
+<script src="{{ asset('js/backend/libs/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('js/backend/libs/Chart.min.js') }}"></script>
+<script src="{{ asset('js/backend/libs/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/backend/libs/summernote-bs4.js') }}"></script>
+<script src="{{ asset('js/backend/libs/jquery.chocolat.min.js') }}"></script>
 
-<script type="text/javascript">
-    // This function is called from the pop-up menus to transfer to
-    // a different page. Ignore if the value returned is a null string:
-    function goPage(newURL) {
+<!-- Template JS File -->
+<script src="{{ asset('js/backend/scripts.js') }}"></script>
+<script src="{{ asset('js/backend/custom.js') }}"></script>
 
-        // if url is empty, skip the menu dividers and reset the menu selection to default
-        if (newURL != "") {
-
-            // if url is "-", it is this page -- reset the menu:
-            if (newURL == "-") {
-                resetMenu();
-            }
-            // else, send page to designated URL
-            else {
-                document.location.href = newURL;
-            }
-        }
-    }
-
-    // resets the menu selection upon entry to this page:
-    function resetMenu() {
-        document.gomenu.selector.selectedIndex = 2;
-    }
-</script>
+<!-- Page Specific JS File -->
+<script src="{{ asset('js/backend/page/index.js') }}"></script>
 </body>
 </html>
