@@ -20,7 +20,6 @@ class CreateCategoryTable extends Migration
             $table->text('description');
             $table->string('url');
             $table->tinyInteger('status');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
