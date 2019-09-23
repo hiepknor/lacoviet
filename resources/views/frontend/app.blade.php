@@ -12,20 +12,20 @@
 
     <!-- Include css -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('lacoviet/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('lacoviet/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('lacoviet/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('lacoviet/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('lacoviet/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend/slick.css') }}">
 </head>
 <body>
 <div class="wrapper">
-    @include('layouts.header')
+    @include('layouts.frontend.header')
     <main>
         @if (\Request::is('/') || \Request::is('trang-chu'))
-            @include('layouts.revslider')
+            @include('layouts.frontend.revslider')
         @else
-            @include('layouts.revbanner')
+            @include('layouts.frontend.revbanner')
             <div class="container">
                 {!! Breadcrumbs::render() !!}
             </div>
@@ -38,20 +38,20 @@
                 @if (\Request::is('thanh-toan'))
                     
                 @else
-                    @include('layouts.sidebar')
+                    @include('layouts.frontend.sidebar')
                 @endif
             </div>
             @if (\Request::is('/') || \Request::is('trang-chu'))
-                @include('layouts.homebottom')
+                @include('layouts.frontend.homebottom')
             @endif
         </div>
     </main>
-    @include('layouts.footer')
+    @include('layouts.frontend.footer')
 </div>
 <!-- Include js -->
 <script src="{{ asset("js/app.js") }}"></script>
-<script src="{{ asset("lacoviet/js/owl.carousel.min.js") }}"></script>
-<script src="{{ asset("lacoviet/js/main.js") }}"></script>
-<script src="{{ asset("lacoviet/js/slick.min.js") }}"></script>
+<script src="{{ asset("js/frontend/owl.carousel.min.js") }}"></script>
+<script src="{{ asset("js/frontend/main.js") }}"></script>
+<script src="{{ asset("js/frontend/slick.min.js") }}"></script>
 @yield('scripts')
 </body>

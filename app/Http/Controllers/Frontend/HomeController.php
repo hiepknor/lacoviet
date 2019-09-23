@@ -3,41 +3,29 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Banner;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Offer;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
+use App\Models\Category;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
-    private $banner;
-
     private $category;
 
     private $product;
 
-    private $offer;
-
     public function __construct
     (
-        Banner $banner,
         Category $category,
-        Product $product,
-        Offer $offer
+        Product $product
     )
     {
-        $this->banner = $banner;
         $this->category = $category;
         $this->product = $product;
-        $this->offer = $offer;
     }
 
     public function index() {
-        return view('pages.home', [
-            'banner' => $this->banner::get(),
+        return view('frontend.home', [
             'all_categories' => $this->category->get(),
             'product' => $this->product->get(),
-            'offer' => $this->offer,
         ]);
     }
 }
