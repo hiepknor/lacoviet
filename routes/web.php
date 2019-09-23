@@ -36,7 +36,7 @@ Route::group(['middleware' => ['auth']],function(){
 
 
 // Frontend
-Route::get('/', ['as' => 'trang-chu', 'uses' => 'Frontend\HomeController@index'])->name('home');
+Route::get('/', ['as' => 'trang-chu', 'uses' => 'Frontend\HomeController@index']);
 
 Route::get('trang-chu', ['as' => 'trang-chu', 'uses' => 'Frontend\HomeController@index']);
 

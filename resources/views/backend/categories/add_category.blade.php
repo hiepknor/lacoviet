@@ -1,68 +1,67 @@
 @extends('layouts.backend.app')
 @section('content')
+    <!-- Main Content -->
+    <div class="main-content">
+        <section class="section">
+            <div class="section-header">
+                <h1>Categories</h1>
 
-<div id="content">
-  <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">Categories</a> <a href="#" class="current">Add Category</a> </div>
-    <h1>Categories</h1>
-  </div>
-  <div class="container-fluid"><hr>
-    <div class="row-fluid">
-      <div class="span12">
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-info-sign"></i> </span>
-            <h5>Add Category</h5>
-          </div>
-          <div class="widget-content nopadding">
-            <form class="form-horizontal" method="post" action="{{ url('/admin/add-category') }}" name="add_category" id="add_category" novalidate="novalidate"> {{ csrf_field() }}
-              <div class="control-group">
-                <label class="control-label">Category Name</label>
-                <div class="controls">
-                  <input type="text" name="category_name" id="category_name">
+                <!-- Breadcrumb -->
+                <div class="section-header-breadcrumb">
+                    <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+                    <div class="breadcrumb-item"><a href="#">Parent Page</a></div>
+                    <div class="breadcrumb-item">Page</div>
                 </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label">Category Level</label>
-                <div class="controls">
-                  <select name="parent_id" style="width: 220px;">
-                    <option value="0">Main Category</option>
-                    @foreach($levels as $val)
-                      <option value="{{ $val->id }}">{{ $val->name }}</option>
-                    @endforeach
-                  </select>
+            </div>
+
+            <div class="section-body">
+                <h2 class="section-title">Add category</h2>
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-6 col-lg-offset-3">
+                        <div class="card">
+                            <form method="post" action="{{ URL::to('admin/add-category') }}" novalidate="novalidate">
+                                <div class="card-header">
+                                    <h4></h4>
+                                    <div class="card-header-action">
+                                        <a class="btn btn-primary" href="{{ URL::previous() }}">Go Back</a>
+                                        <button class="btn btn-primary" type="submit">Save</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Parent</label>
+                                        <select class="form-control" name="parent_id" required>
+                                            <option value="">-- Choose --</option>
+                                            @foreach(DB::table('categories')->get() as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class="form-control" name="description" style="min-height: 100px" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Url</label>
+                                        <input type="text" class="form-control" name="url" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <select class="form-control" name="parent_id" required>
+                                            <option value="1">Active</option>
+                                            <option value="0">Not Active</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label">Description</label>
-                <div class="controls">
-                  <textarea name="description" id="description"></textarea>
-                </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label">URL</label>
-                <div class="controls">
-                  <input type="text" name="url" id="url">
-                </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label">Status</label>
-                <div class="controls">
-                  <select name="status" id="status" style="width: 220px;">
-                    <option value="1">Enable</option>
-                    <option value="0">Disable</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-actions">
-                <input type="submit" value="Add Category" class="btn btn-success">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+            </div>
+        </section>
     </div>
-  </div>
-</div>
-
-
 @endsection

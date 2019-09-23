@@ -11,7 +11,7 @@ class CategoryController extends Controller
     public function addCategory(Request $request){
     	if($request->isMethod('post')){
     		$data = $request->all();
-    		//echo "<pre>"; print_r($data); die;
+    		echo "<pre>"; print_r($data); die;
     		$category = new Category;
     		$category->name = $data['category_name'];
             $category->parent_id = $data['parent_id'];
