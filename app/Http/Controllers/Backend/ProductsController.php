@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\Facades\Image;
-use App\Category;
-use App\Product;
+use App\Models\Category;
+use App\Models\Product;
 
 class ProductsController extends Controller
 {
