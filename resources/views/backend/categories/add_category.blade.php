@@ -9,17 +9,17 @@
                 <!-- Breadcrumb -->
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Parent Page</a></div>
-                    <div class="breadcrumb-item">Page</div>
+                    <div class="breadcrumb-item"><a href="#">Categories</a></div>
+                    <div class="breadcrumb-item">Add category</div>
                 </div>
             </div>
 
             <div class="section-body">
                 <h2 class="section-title">Add category</h2>
                 <div class="row">
-                    <div class="col-12 col-md-12 col-lg-6 col-lg-offset-3">
+                    <div class="col-12 col-md-12 col-lg-12">
                         <div class="card">
-                            <form method="post" action="{{ URL::to('admin/add-category') }}" novalidate="novalidate">
+                            <form method="post" action="{{ URL::to('admin/add-category') }}">{{ csrf_field() }}
                                 <div class="card-header">
                                     <h4></h4>
                                     <div class="card-header-action">
@@ -30,7 +30,7 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Parent</label>
-                                        <select class="form-control" name="parent_id" required>
+                                        <select class="form-control" name="parent_id">
                                             <option value="">-- Choose --</option>
                                             @foreach(DB::table('categories')->get() as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea class="form-control" name="description" style="min-height: 100px" required></textarea>
+                                        <textarea class="form-control" name="description" style="min-height: 100px"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Url</label>
@@ -51,9 +51,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Status</label>
-                                        <select class="form-control" name="parent_id" required>
-                                            <option value="1">Active</option>
-                                            <option value="0">Not Active</option>
+                                        <select class="form-control" name="status" required>
+                                            <option value="">-- Choose --</option>
+                                            @foreach(STATUS_VALUES as $key => $value)
+                                                <option value="{{ $key }}">{{ $value }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
