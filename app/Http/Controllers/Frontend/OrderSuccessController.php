@@ -16,7 +16,7 @@ class OrderSuccessController extends Controller
 
     public function index() {
         return view('frontend.order-success', [
-            'all_categories' => $this->category->get(),
+            'categories' => $this->category->get(),
         ]);
     }
 }

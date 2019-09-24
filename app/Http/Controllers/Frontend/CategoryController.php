@@ -13,9 +13,9 @@ class CategoryController extends Controller
     }
 
     public function index($categorySlug) {
-        $all_categories = Category::get();
+        $categories = Category::get();
         $category_by_slug = Category::where('slug', $categorySlug)->first();
         $product = Product::where('category_id', $category_by_slug->id)->get();
-        return view('frontend.category', compact('all_categories', 'category_by_slug', 'product'));
+        return view('frontend.category', compact('categories', 'category_by_slug', 'product'));
     }
 }

@@ -15,7 +15,7 @@ class EventController extends Controller
 
     public function index() {
         return view('frontend.event', [
-            'all_categories' => $this->category->get(),
+            'categories' => $this->category->get(),
         ]);
     }
 }

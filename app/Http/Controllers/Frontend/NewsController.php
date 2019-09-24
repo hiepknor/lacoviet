@@ -16,7 +16,7 @@ class NewsController extends Controller
 
     public function index() {
         return view('frontend.news', [
-            'all_categories' => $this->category->get(),
+            'categories' => $this->category->get(),
         ]);
     }
 }

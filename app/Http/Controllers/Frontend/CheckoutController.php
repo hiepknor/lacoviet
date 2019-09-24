@@ -27,7 +27,7 @@ class CheckoutController extends Controller
 
     public function index() {
         return view('frontend.checkout', [
-            'all_categories' => $this->category->get(),
+            'categories' => $this->category->get(),
             'paymentMethod'  => $this->paymentMethod->get(),
             'shippingType'   => $this->shippingType->get(),
         ]);

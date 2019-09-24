@@ -3,7 +3,7 @@
 @section('pageTitle', 'Trang chủ')
 
 @section('content')
-    @foreach($all_categories as $caterory)
+    @foreach($categories as $caterory)
         <div class="original-label lastest-products-label">
             <span><h3>{{ $caterory->name }}</h3></span>
         </div>
@@ -23,10 +23,10 @@
                         <div class="item-price">
                             @if($product->promotion_price == 0)
                                 <span class="unit-price center"></span>
-                                <span class="promotion-price center">{{ $product->unit_price }}&nbsp;₫</span>
+                                <span class="promotion-price center">{{ formatPrice($product->unit_price) }}&nbsp;₫</span>
                             @else
-                                <span class="unit-price center">{{ $product->unit_price }}&nbsp;₫</span>
-                                <span class="promotion-price center">{{ $product->promotion_price }}&nbsp;₫</span>
+                                <span class="unit-price center">{{ formatPrice($product->unit_price) }}&nbsp;₫</span>
+                                <span class="promotion-price center">{{ formatPrice($product->promotion_price) }}&nbsp;₫</span>
                             @endif
                         </div>
                     </a>

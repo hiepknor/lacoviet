@@ -26,7 +26,7 @@ class CartController extends Controller
     {
 
         return view('frontend.cart', [
-            'all_categories' => $this->category->get(),
+            'categories' => $this->category->get(),
         ]);
     }
 

@@ -16,11 +16,11 @@
                         <span class="nav-click"><i class="nav-arrow"></i></span>
                         <div class="label label-parent"><a href="{{ route('san-pham') }}">Sản phẩm</a></div>
                         <ul class="nav-submenu second-level-menu">
-                            @foreach($all_categories as $catg)
+                            @foreach($categories->where('status', 1) as $category)
                                 <li class="nav-submenu-item ">
                                     <div class="label">
                                         <i class="fa fa-check" aria-hidden="true"></i>
-                                        <a href="{{ url('san-pham/'.$catg->slug) }}">{{ $catg->name }}</a>
+                                        <a href="{{ url('san-pham/'.$category->slug) }}">{{ $category->name }}</a>
                                     </div>
                                 </li>
                             @endforeach
