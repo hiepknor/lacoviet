@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link type="image/x-icon" rel="shortcut icon"
-          href="{{ asset('lacoviet/images/1537884636-Cong-Ty-Laco-Cong-Ty-TNHH-Quoc-Te-Laco.png') }}"/>
+          href="{{ asset('images/frontend/shortcut-image.png') }}"/>
     <title>@yield('pageTitle') - {{ config('app.name', 'Laravel') }}</title>
     <meta name="keywords" content=""/>
 
@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/frontend/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/frontend/slick.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
 <div class="wrapper">

@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index() {
         return view('frontend.home', [
             'all_categories' => $this->category->get(),
-            'product' => $this->product->get(),
+            'products' => $this->product->get(),
         ]);
     }
 }

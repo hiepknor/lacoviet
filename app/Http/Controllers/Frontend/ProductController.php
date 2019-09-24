@@ -26,7 +26,7 @@ class ProductController extends Controller
     public function index() {
         return view('frontend.product', [
             'all_categories' => $this->category->get(),
-            'product' => $this->product->get()
+            'products' => $this->product->get()
         ]);
     }
 
@@ -34,7 +34,7 @@ class ProductController extends Controller
         $product = $this->product->whereSlug($productSlug)->first();
         return view('frontend.product-detail', [
             'all_categories' => $this->category->get(),
-            'product' => $product,
+            'products' => $product,
         ]);
     }
 }

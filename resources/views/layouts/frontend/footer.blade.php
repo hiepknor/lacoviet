@@ -7,7 +7,7 @@
 					<div class="subscribe-form center">
 						<form action="" method="post">
 							<input type="email" name="email" class="subscribe-email" placeholder="Nhập email" required="required">
-							<button type="submit" class="subscribe-submit">Đăng ký</button>
+							<button type="submit" class="subscribe-submit"><i class="fas fa-envelope"></i>&nbsp;Đăng ký</button>
 						</form>
 						<div class="subscribe-info">
 							<p>Chúng tôi sẽ gửi các chương trình Khuyến mãi, ưu đãi giảm giá, tri ân khách hàng thân thiết và giới thiệu sản phẩm mới tới Email của bạn.</p>

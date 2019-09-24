@@ -1,4 +1,4 @@
-@extends('frontend.app')
+@extends('layouts.frontend.app')
 
 @section('pageTitle', 'Tin tức')
 

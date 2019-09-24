@@ -786,6 +786,11 @@ main {
     text-align: center;
 }
 
+.item-thumb {
+    width: 100%;
+    height: 160px;
+}
+
 .grid-item .item-link .item-thumb, .grid-news .item-thumb {
     position: relative;
 }
@@ -853,11 +858,6 @@ main {
     color: #ffffff;
     font-size: 12px;
     cursor: pointer;
-}
-
-.add-to-cart span i {
-    font-size: 15px;
-    margin-right: 5px;
 }
 
 /* ================================ Banner =============================== */
@@ -1064,12 +1064,11 @@ footer {
 
 .subscribe-submit {
     padding: 10px 35px;
-    background: url(/images/frontend/mail.png) no-repeat 30px 13px var(--theme-color);
+    background-color: var(--theme-color);
     border: none;
     color: #ffffff;
     margin: 15px;
     text-transform: uppercase;
-    padding-left: 55px;
     font-family: RobotoB;
     cursor: pointer;
 }
@@ -1194,9 +1193,8 @@ footer {
         width: calc(100% / 3);
     }
 
-    .grid-products .grid-item .item-link .item-thumb {
-        width: 100%;
-        height: 220px;
+    .item-thumb {
+        height: 230px;
     }
 
     .add-to-cart:hover {
@@ -1478,6 +1476,7 @@ footer {
     /* Main content */
     .item-thumb {
         overflow: hidden;
+        height: 250px;
     }
 
     .item-thumb > img {
