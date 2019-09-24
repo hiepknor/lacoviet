@@ -14,10 +14,11 @@
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="{{ asset('css/backend/jqvmap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/backend/summernote-bs4.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/backend/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/backend/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/libs/jqvmap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/libs/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/libs/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/libs/owl.theme.default.min.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.1/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('css/backend/style.css') }}">
@@ -56,6 +57,7 @@
 <script src="{{ asset('js/backend/libs/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/backend/libs/summernote-bs4.js') }}"></script>
 <script src="{{ asset('js/backend/libs/jquery.chocolat.min.js') }}"></script>
+
 
 <!-- Template JS File -->
 <script src="{{ asset('js/backend/scripts.js') }}"></script>

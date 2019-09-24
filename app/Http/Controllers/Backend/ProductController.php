@@ -9,46 +9,49 @@ use Intervention\Image\Facades\Image;
 use App\Models\Category;
 use App\Models\Product;
 
-class ProductsController extends Controller
+class ProductController extends Controller
 {
     public function addProduct(Request $request){
 
     	if($request->isMethod('post')){
     		$data = $request->all();
-    		//echo "<pre>"; print_r($data); die;
+//    		echo "<pre>"; print_r($data); die;
     		if(empty($data['category_id'])){
     			return redirect()->back()->with('flash_message_error','Under Category is missing!');	
     		}
     		$product = new Product;
     		$product->category_id = $data['category_id'];
-    		$product->product_name = $data['product_name'];
-    		$product->product_code = $data['product_code'];
-    		$product->product_color = $data['product_color'];
-    		if(!empty($data['description'])){
-    			$product->description = $data['description'];
-    		}else{
-				$product->description = '';    			
-    		}
-    		$product->price = $data['price'];
+    		$product->name = $data['name'];
+            $product->sku = $data['sku'];
+            if(!empty($data['description'])){
+                $product->description = $data['description'];
+            }else{
+                $product->description = '';
+            }
+    		$product->url = $data['url'];
+    		$product->unit_price = $data['unit_price'];
+            if ($product->promotion_price) $product->promotion_price = $data['promotion_price'];
 
     		// Upload Image
-    		if($request->hasFile('image')){
-    			$image_tmp = Input::file('image');
-    			if($image_tmp->isValid()){
-    				$extension = $image_tmp->getClientOriginalExtension();
-    				$filename = rand(111,99999).'.'.$extension;
-    				$large_image_path = 'images/backend/products/large/'.$filename;
-    				$medium_image_path = 'images/backend/products/medium/'.$filename;
-    				$small_image_path = 'images/backend/products/small/'.$filename;
-    				// Resize Images
-    				Image::make($image_tmp)->save($large_image_path);
-    				Image::make($image_tmp)->resize(600,600)->save($medium_image_path);
-    				Image::make($image_tmp)->resize(300,300)->save($small_image_path);
+//    		if($request->hasFile('image')){
+//    			$image_tmp = Input::file('image');
+//    			if($image_tmp->isValid()){
+//    				$extension = $image_tmp->getClientOriginalExtension();
+//    				$filename = rand(111,99999).'.'.$extension;
+//    				$large_image_path = 'images/backend/products/large/'.$filename;
+//    				$medium_image_path = 'images/backend/products/medium/'.$filename;
+//    				$small_image_path = 'images/backend/products/small/'.$filename;
+//    				// Resize Images
+//    				Image::make($image_tmp)->save($large_image_path);
+//    				Image::make($image_tmp)->resize(600,600)->save($medium_image_path);
+//    				Image::make($image_tmp)->resize(300,300)->save($small_image_path);
+//
+//    				// Store image name in products table
+//    				$product->image = $filename;
+//    			}
+//    		}
 
-    				// Store image name in products table
-    				$product->image = $filename;
-    			}
-    		}
+            $product->status = $data['status'];
 
     		$product->save();
     		/*return redirect()->back()->with('flash_message_success','Product has been added successfully!');*/

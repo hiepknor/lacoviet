@@ -1,8 +1,8 @@
 <?php
 
 const STATUS_VALUES = [
-    '1' => 'Active',
-    '2' => 'Not Active'
+    '0' => 'Not Active',
+    '1' => 'Active'
 ];
 
 function formatPrice($input) {

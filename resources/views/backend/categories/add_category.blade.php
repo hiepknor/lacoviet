@@ -21,7 +21,7 @@
                         <div class="card">
                             <form method="post" action="{{ URL::to('admin/add-category') }}">{{ csrf_field() }}
                                 <div class="card-header">
-                                    <h4></h4>
+                                    <h4>New category</h4>
                                     <div class="card-header-action">
                                         <a class="btn btn-primary" href="{{ URL::previous() }}">Go Back</a>
                                         <button class="btn btn-primary" type="submit">Save</button>
